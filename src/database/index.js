@@ -2,7 +2,6 @@ import knex from 'knex';
 import { ConfigService } from 'libs/config/config.service';
 import config from '../../knexfile';
 import { logger } from '../common/utils';
-import { NODE_ENV } from '../env';
 
 export const knexConnection = knex(config[ConfigService.getSingleton().get('NODE_ENV')]);
 
