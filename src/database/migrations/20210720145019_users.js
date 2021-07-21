@@ -17,4 +17,3 @@ export function up(knex) {
  * @param {import("knex")} knex
  */
 export function down(knex) { return knex.schema.dropTableIfExists('users'); }
-

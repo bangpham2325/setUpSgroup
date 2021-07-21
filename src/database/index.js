@@ -2,8 +2,9 @@ import knex from 'knex';
 import { ConfigService } from 'libs/config/config.service';
 import config from '../../knexfile';
 import { logger } from '../common/utils';
-import {NODE_ENV} from '../env';
-console.log(NODE_ENV)
+import { NODE_ENV } from '../env';
+
+console.log(NODE_ENV);
 export const knexConnection = knex(config[NODE_ENV]);
 
 export const getTransaction = () => knexConnection.transaction();
