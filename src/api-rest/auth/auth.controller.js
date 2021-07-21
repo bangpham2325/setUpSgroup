@@ -3,6 +3,7 @@ import { OK } from 'http-status';
 import { httpExceptionHandler } from 'libs/http-exception/handler/exception.handler';
 import { AuthService } from './services/auth.service';
 import { registerInput } from './dto/register-input';
+import { loginInput } from './dto/login-input';
 
 export class AuthController {
     /**
