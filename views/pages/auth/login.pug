@@ -1,51 +1,56 @@
-extends ../../layout/public/auth.layout.pug
-
-block content
-  .login-box
-    .login-logo
-      a(href='#')
-        b Admin
-        | LTE
-    // /.login-logo
-    .card
-      .card-body.login-card-body
-        p.login-box-msg Sign in to start your session
-        form#login-form(action='#' method='post')
-          .input-group.mb-3
-            input#email.form-control(type='email' placeholder='Email')
-            .input-group-append
-              .input-group-text
-                span.fas.fa-envelope
-          .input-group.mb-3
-            input#password.form-control(type='password' placeholder='Password')
-            .input-group-append
-              .input-group-text
-                span.fas.fa-lock
-          .row
-            .col-8
-              .icheck-primary
-                input#remember(type='checkbox')
-                label(for='remember')
-                  | Remember Me
-            // /.col
-            .col-4
-              button.btn.btn-primary.btn-block(type='submit') Sign In
-            // /.col
-        .social-auth-links.text-center.mb-3
-          p - OR -
-          a.btn.btn-block.btn-primary(href='#')
-            i.fab.fa-facebook.mr-2
-            |  Sign in using Facebook
-          a.btn.btn-block.btn-danger(href='#')
-            i.fab.fa-google-plus.mr-2
-            |  Sign in using Google+
-        // /.social-auth-links
-        p.mb-1
-          a(href='forgot-password.html') I forgot my password
-        p.mb-0
-          a.text-center(href='register.html') Register a new membership
-      // /.login-card-body
-  // /.login-box
-
-block scripts
-  script(src='dist/js/pages/login.js') 
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Sign Up Form by Colorlib
+  // Font Icon
+  link(rel='stylesheet' href='authsession/fonts/material-icon/css/material-design-iconic-font.min.css')
+  // Main css
+  link(rel='stylesheet' href='authsession/css/style.css')
+.main
+  
+  // Sing in  Form
+  section.sign-in
+    .container
+      .signin-content
+        .signin-image
+          figure
+            img(src='authsession/images/signin-image.jpg' alt='sing up image')
+          a.signup-image-link(href='#') Create an account
+        .signin-form
+          h2.form-title Sign up
+          form#login-form.register-form(action='#' method='post')
+            .form-group
+              label(for='your_name')
+                i.zmdi.zmdi-account.material-icons-name
+              input#email(type='email' placeholder='Email')
+            .form-group
+              label(for='your_pass')
+                i.zmdi.zmdi-lock
+              input#password(type='password' placeholder='Password')
+            .form-group
+              input#remember-me.agree-term(type='checkbox' name='remember-me')
+              label.label-agree-term(for='remember-me')
+                span
+                  span
+                | Remember me
+            .form-group.form-button
+              input#signin.form-submit(type='submit' name='signin' value='Log in')
+          .social-login
+            span.social-label Or login with
+            ul.socials
+              li
+                a(href='#')
+                  i.display-flex-center.zmdi.zmdi-facebook
+              li
+                a(href='#')
+                  i.display-flex-center.zmdi.zmdi-twitter
+              li
+                a(href='#')
+                  i.display-flex-center.zmdi.zmdi-google
+// JS
+script(src='authsession/vendor/jquery/jquery.min.js')
+script(src='authsession/js/main.js')
+script(src='dist/js/pages/login.js')
+// This templates was made by Colorlib (https://colorlib.com)

@@ -35,4 +35,13 @@ export class AuthController {
             return httpExceptionHandler(error)(res);
         }
     }
+
+    login = async (req, res) => {
+        try {
+            const data = await this.#authService.login(loginInput(req.body));
+            return res.status(OK).json(data);
+        } catch (error) {
+            return httpExceptionHandler(error)(res);
+        }
+    }
 }
