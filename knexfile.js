@@ -1,8 +1,8 @@
 require('dotenv').config();
-
+console.log('data:'+process.env.DATABASE_TYPE);
 module.exports = {
     development: {
-        client: 'mysql',
+        client: process.env.DATABASE_TYPE,
         connection: process.env.DATABASE_URL,
         migrations: {
             directory: `${process.cwd()}/src/database/migrations`,
