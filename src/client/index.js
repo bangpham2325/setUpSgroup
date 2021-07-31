@@ -6,7 +6,7 @@ import { userPageRouter } from './user';
 const router = express.Router();
 
 // router.use('/auth', authPageRouter);
-router.use('/user', userPageRouter)
+router.use('/user', userPageRouter);
 router.use('/', homePageRouter);
 
 export const clientRouter = router;

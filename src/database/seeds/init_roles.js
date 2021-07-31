@@ -18,7 +18,7 @@ PATH_LOOKUP = null;
 exports.seed = async knex => {
     const roles = await knex.table('roles').select();
     const users = await knex.table('users').select().where('username', '<>', 'bangpham@gmail.com');
-    console.log(users[0].id);
+    // console.log(users[0].id);
     const usersRolesRecords = users.map(user => ({
         user_id: user.id,
         role_id: (roles.find(role => role.name === Role.VISITOR)).id

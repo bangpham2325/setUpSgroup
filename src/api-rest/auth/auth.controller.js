@@ -40,6 +40,7 @@ export class AuthController {
     login = async (req, res) => {
         try {
             const data = await this.#authService.login(loginInput(req.body));
+            
             return res.status(OK).json(data);
         } catch (error) {
             return httpExceptionHandler(error)(res);

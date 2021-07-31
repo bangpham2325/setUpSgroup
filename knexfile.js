@@ -1,5 +1,6 @@
 require('dotenv').config();
-console.log('data:'+process.env.DATABASE_TYPE);
+
+// console.log(`data:${process.env.DATABASE_TYPE}`);
 module.exports = {
     development: {
         client: process.env.DATABASE_TYPE,

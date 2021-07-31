@@ -3,3 +3,4 @@ export const JWT_SECRET = process.env.JWT_SECRET || 'bangpham';
 export const EXPPIRE_DAYS = process.env.EXPPIRE_DAYS || '10d';
 export const { DATABASE_URL } = process.env;
 export const PORT = process.env.PORT || 3000;
+

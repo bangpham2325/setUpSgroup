@@ -49,7 +49,7 @@ export class AuthService {
         body.password = this.#bcryptService.hash(body.password);
 
         const userId = await this.#userService.createOneAndReturn(body);
-
+        
         return profileResponse(
             {
                 id: userId,
@@ -63,6 +63,7 @@ export class AuthService {
         const user = await this.#userService.getByUsernameWithRoles(body.username);
 
         if (!user || !this.#bcryptService.compare(body.password, user.password)) {
+            // console.log(body.password +" "+ user.password)
             throw new UnAuthorizedException('Username or password is incorrect');
         }
 

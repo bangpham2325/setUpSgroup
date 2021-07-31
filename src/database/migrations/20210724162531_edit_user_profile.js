@@ -1,7 +1,8 @@
 // @ts-check
 
 import { UserStatus } from 'common/enum/user-status.enum';
-console.log(UserStatus)
+
+// console.log(UserStatus);
 
 /**
  * @param {import("knex")} knex
