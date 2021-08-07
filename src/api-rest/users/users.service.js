@@ -89,7 +89,6 @@ export class UsersService {
                 users[row.user_id].roles.push(row.name);
             }
         });
-        console.log(users);
         return Object.values(users);
     }
 
