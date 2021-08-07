@@ -39,7 +39,8 @@ export class UserRepository {
     getAll(offset, limit, columns = '*') {
         return this.builder().select(columns).limit(limit).offset(offset);
     }
-    getTotalRecord(){
-        return this.builder().count({ total: ['users.id']});
+
+    getTotalRecord() {
+        return this.builder().count({ total: ['users.id'] });
     }
 }

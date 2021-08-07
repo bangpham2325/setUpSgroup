@@ -32,10 +32,10 @@ export class UsersController {
             const totalRecord = await this.#userService.getTotalRecord();
             // const PAGE_SIZE = 3;
             // const totalPage = await Math.ceil(totalRecord[0].total / PAGE_SIZE);
-            
-            return res.status(OK).json({ 
+
+            return res.status(OK).json({
                 data,
-                totalRecord: totalRecord
+                totalRecord
             });
         } catch (error) {
             return httpExceptionHandler(error)(res);

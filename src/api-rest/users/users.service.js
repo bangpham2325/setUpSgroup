@@ -3,7 +3,6 @@ import { toSearchValue } from 'common/utils/query';
 import { DuplicateException } from 'libs/http-exception/exceptions';
 import { UserRepository } from './user.repository';
 
-
 export class UsersService {
     /**
      * @type {UsersService}
@@ -64,10 +63,10 @@ export class UsersService {
     }
 
     async getAll(query) {
-        const builder = this.#userRepository.getAll((query.page - 1) * query.selectNumberRow , query.selectNumberRow)
+        const builder = this.#userRepository.getAll((query.page - 1) * query.selectNumberRow, query.selectNumberRow)
             .rightJoin('users_roles', 'users_roles.user_id', '=', 'users.id')
             .leftJoin('roles', 'users_roles.role_id', '=', 'roles.id');
- 
+
         if (query.searchContent) {
             builder.where('username', 'like', toSearchValue(query.searchContent));
             builder.orWhere('fullName', 'like', toSearchValue(query.searchContent));
@@ -90,7 +89,7 @@ export class UsersService {
                 users[row.user_id].roles.push(row.name);
             }
         });
-       console.log(users)
+        console.log(users);
         return Object.values(users);
     }
 
@@ -99,6 +98,6 @@ export class UsersService {
             .rightJoin('users_roles', 'users_roles.user_id', '=', 'users.id')
             .leftJoin('roles', 'users_roles.role_id', '=', 'roles.id');
         const rows = await builder;
-		return rows;
-	}
+        return rows;
+    }
 }
