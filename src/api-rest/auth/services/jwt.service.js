@@ -1,7 +1,7 @@
-
 import { sign, decode } from 'jsonwebtoken';
 import { ConfigService } from 'libs/config/config.service';
 import { logger } from '../../../common/utils/winston';
+
 export class JwtService {
     /**
      * @type {AuthService}

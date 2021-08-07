@@ -36,7 +36,10 @@ export class UserRepository {
         return this.builder().select(columns).where(fieldName, '=', value);
     }
 
-    getAll(columns = '*') {
-        return this.builder().select(columns);
+    getAll(offset, limit, columns = '*') {
+        return this.builder().select(columns).limit(limit).offset(offset);
+    }
+    getTotalRecord(){
+        return this.builder().count({ total: ['users.id']});
     }
 }

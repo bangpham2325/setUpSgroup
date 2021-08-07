@@ -9,6 +9,7 @@ block content
       include ../../components/navbar.pug
       // End of Topbar
       // Begin Page Content
+      // Begin Page Content
       .container-fluid
         // Page Heading
         h1.h3.mb-2.text-gray-800 Tables
@@ -23,37 +24,55 @@ block content
             h6.m-0.font-weight-bold.text-primary DataTables Example
           .card-body
             .table-responsive
-              table#dataTable.table.table-bordered(width='100%' cellspacing='0')
-                thead
-                  tr
-                    th Name
-                    th Position
-                    th Office
-                    th Age
-                    th Start date
-                    th Salary
-                tfoot
-                  tr
-                    th Name
-                    th Position
-                    th Office
-                    th Age
-                    th Start date
-                    th Salary
-                tbody
-                  tr
-                    td Tiger Nixon
-                    td System Architect
-                    td Edinburgh
-                    td 61
-                    td 2011/04/25
-                    td $320,800
-                  tr
-                    td Garrett Winters
-                    td Accountant
-                    td Tokyo
-                    td 63
-                    td 2011/07/25
-                    td $170,750
+              .row
+                .col-sm-12.col-md-6
+                  lable  Show
+                  select#selectNumberRow(aria-label='Default select example' style='margin-left:10px ; width: 70px;border: 1px solid #d1d3e2;color: #6e707e')
+                    option(value='5') 5
+                    option(value='10') 10
+                    option(value='20') 20
+                    option(value='30') 30
+                .col-sm-12.col-md-6
+                  .input-group.rounded(style='width: 70% ;float:right ;margin-bottom:10px')
+                    input#searchContent.searchContent.form-control.rounded(type='search' placeholder='Search' aria-label='Search' aria-describedby='search-addon' )
+
+              .row
+                .col-sm-12
+                  table#dataTable.table.table-bordered(width='100%' cellspacing='0')
+                    thead
+                        tr
+                          th Id
+                          th Username
+                          th Full name
+                          th status
+                          th roles
+                      
+                    tfoot
+                      tr
+                          th Id
+                          th Username
+                          th Full name
+                          th status
+                          th roles
+                    tbody#user-table
+              .row
+                .col-sm-12.col-md-5
+                  | One of two columns
+                .col-sm-12.col-md-7
+                  nav(aria-label='Page navigation example' style='float:right ')
+                   ul.pagination
+
+
+
+          // /.container-fluid
+          // End of Main Content
+          // Footer
+
+
+    a.scroll-to-top.rounded(href='#page-top')
+      i.fas.fa-angle-up
+
 
     include ../../components/footer.pug
+block scripts
+  script(src='/js/pages/user.js' type='text/javascript') 

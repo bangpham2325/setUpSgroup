@@ -49,7 +49,7 @@ export class AuthService {
         body.password = this.#bcryptService.hash(body.password);
 
         const userId = await this.#userService.createOneAndReturn(body);
-        
+
         return profileResponse(
             {
                 id: userId,
